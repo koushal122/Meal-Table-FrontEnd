@@ -1,0 +1,46 @@
+@import '../../scss/mixins.scss';
+
+#logo{
+   @include DisplayFlexCol;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-weight: 600;
+   font-size:22px;
+   font-family: "Josefin Sans", Arial, sans-serif;
+   margin-left: 10%;
+}
+
+.navbar{
+    @include DisplayFlexRow;
+    justify-content: space-between;
+    gap: 16px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid rgb(255, 255, 255,0.2);
+
+}
+
+.navbar-list{
+   @include DisplayFlexRow;
+   gap: 10px;
+   list-style: none;
+   align-items: center;
+   font-size: 13px;
+   letter-spacing: 2px;
+   font-weight: 400;
+   margin-right: 10%;
+}
+
+.navbar-list-item{
+   color: white;
+   letter-spacing: 2px;
+   padding-top: 1.5rem;
+   padding-bottom: 1.5rem;
+   padding-left: 20px;
+   padding-right: 20px;
+}

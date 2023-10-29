@@ -1,0 +1,40 @@
+@import '../../scss/colors.scss';
+
+.book-table{
+    padding: 10px;
+    background-color: $PRIMARY_COLOR;
+    width: max-content;;
+
+    input,textarea{
+        background-color: $PRIMARY_COLOR;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid white;
+        margin:2px;
+        &::placeholder{
+            color: white;
+        }
+    }
+
+    button{
+        background-color: white;
+        color: black;
+        padding: 8px;
+        align-items: start;
+        &hover{
+            background-color: black;
+        }
+    }
+}
+
+.book-name,.book-date-time{
+    display: flex;
+    gap: 5px;
+}
+
+.book-msg-appoint{
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+}
+

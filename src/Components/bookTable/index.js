@@ -1,8 +1,8 @@
 import React from 'react'
 import './index.scss';
-const BookTable = () => {
+const BookTable = ({className}) => {
   return (
-    <div className="book-table">
+    <div className={`book-table ${className}`}>
         <h3>BOOK A TABLE</h3>
         <form>
             <div className="book-name">

@@ -2,9 +2,9 @@ import React from 'react'
 import './index.scss';
 import cart from '../../Images/cart-icon.png';
 
-const Header = () => {
+const Header = ({className}) => {
   return (
-    <div className="navbar">
+    <div className={`navbar ${className}`}>
        <div id="logo">
             <div>COFFEE</div>
             <small>BLEND</small>

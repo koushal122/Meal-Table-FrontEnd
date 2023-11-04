@@ -3,11 +3,13 @@
 .book-table{
     padding: 10px;
     background-color: $PRIMARY_COLOR;
-    width: max-content;;
+    width: 100%;
+    color: white;
 
     input,textarea{
         background-color: $PRIMARY_COLOR;
         padding: 10px;
+        width: 50%;
         border: none;
         border-bottom: 1px solid white;
         margin:2px;
@@ -20,9 +22,11 @@
         background-color: white;
         color: black;
         padding: 8px;
+        width: 50%;
         align-items: start;
-        &hover{
+        &:hover{
             background-color: black;
+            color: white;
         }
     }
 }
@@ -36,5 +40,10 @@
     display: flex;
     gap: 4px;
     margin-top: 4px;
+
+    button{
+        font-size: 1em;
+        font-weight: 700;
+    }
 }
 

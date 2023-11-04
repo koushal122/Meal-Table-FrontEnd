@@ -1,0 +1,78 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/colors.scss';
+
+.navbar-style{
+    position: fixed;
+    background-color: black;
+}
+
+.home-adress-book-table{
+   @include DisplayFlexRow;
+   width: 100%; 
+}
+
+.address-location{
+    width: 70%;
+}
+
+.home-book-table{
+    width: 30%;
+}
+
+.home-menu-section{
+    @include DisplayFlexRow;
+    gap: 1rem;
+    padding: 40px;
+
+    .home-menu-section-first{
+        @include DisplayFlexCol;
+        align-items: flex-end;
+        width: 50%;
+        span{
+            color: $PRIMARY_COLOR;
+            font-family: "Great Vibes", cursive;
+            font-size: 50px;
+            margin-bottom: -10px;
+        }
+
+        h3{
+            color: white;
+            font-weight: 700;
+            font-size: 40px;
+            margin-top: -20px;
+        }
+
+        p{
+            color: gray;
+            font-family: "Poppins", Arial, sans-serif;
+            text-align: right;
+        }
+
+        button{
+            border: 1px solid $PRIMARY_COLOR;
+            background: transparent;
+            color: $PRIMARY_COLOR;
+            cursor: pointer;
+            padding: 1.5rem;
+            &:hover{
+                background: $PRIMARY_COLOR;
+                color: white;
+            }
+        }
+    }
+}
+
+.home-menu-section-images-row{
+    @include DisplayFlexRow;
+    gap: 1em;
+    .home-menu-section-images-col{
+        @include DisplayFlexCol;
+        gap: 1em;
+
+        img{
+            width: 200px;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}

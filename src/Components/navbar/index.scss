@@ -15,7 +15,7 @@
     @include DisplayFlexRow;
     justify-content: space-between;
     gap: 16px;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;

@@ -3,14 +3,20 @@ import Header from '../../Components/navbar';
 import AdressAndLocation from '../../Components/adressAndLocation';
 import BookTable from '../../Components/bookTable';
 import ImageSlider from '../../Components/imageSlider';
-import { CAROUSEL_SLIDERS } from '../../Constants/constants';
+import { CAROUSEL_SLIDERS , products} from '../../Constants/constants';
 import './home.scss'
-import About from '../../Components/about';
+import About from '../../Components/about/story';
 import Services from '../../Components/services';
 import Coffe_cup_image from '../../Images/coffee_cup.png';
 import Coffee_cup_image2 from '../../Images/coffee_cup_2.png';
 import DrinkImage from '../../Images/drink-with-ice.png';
 import Coffee_cup_image3 from '../../Images/carousel_bg_2.png';
+import GrowingNumbers from '../../Components/about/growing';
+import ProductItem from '../../Components/productItem';
+import ProductMenu from '../../Components/productMenu';
+import Reviews from '../../Components/reviews';
+import Blog from '../../Components/blog';
+import Footer from '../../Components/footer';
 const Home = () => {
     const [navChange,setNavchange]=useState(false);
 
@@ -24,7 +30,7 @@ const Home = () => {
     window.addEventListener("scroll", changeNavStyle);
     return (
         <>
-        <Header className={navChange?"navbar-style":""}></Header>
+        <Header/>
         <ImageSlider Images={CAROUSEL_SLIDERS}/>
         <div className="home-adress-book-table">
           <AdressAndLocation className="address-location" ></AdressAndLocation>
@@ -50,7 +56,20 @@ const Home = () => {
                </div>
             </div>
         </div>
-        </>
+        <GrowingNumbers/>
+        <div className="product-item">
+            {
+               products.map((product)=>{
+                  return <ProductItem Item={product}/>
+               })
+            }
+         </div>
+         <ProductMenu/>
+         <Reviews/>
+         <Blog/>
+         <hr></hr>
+         <Footer/>
+         </>
         
       );
 }

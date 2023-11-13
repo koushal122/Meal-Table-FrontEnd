@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutImage from '../../Images/about_bg_img.png'
+import AboutImage from '../../../Images/about_bg_img.png'
 import './index.scss'
 
 

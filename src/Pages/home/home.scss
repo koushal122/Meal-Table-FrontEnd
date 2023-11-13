@@ -1,11 +1,6 @@
 @import '../../scss/mixins.scss';
 @import '../../scss/colors.scss';
 
-.navbar-style{
-    position: fixed;
-    background-color: black;
-}
-
 .home-adress-book-table{
    @include DisplayFlexRow;
    width: 100%; 
@@ -75,4 +70,11 @@
             background-size: cover;
         }
     }
+}
+
+.product-item{
+    @include DisplayFlexRow;
+    justify-content: center;
+    gap: 1em;
+    padding: 2em;
 }

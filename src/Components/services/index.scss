@@ -9,6 +9,10 @@
     padding: 20px;
     justify-content: center;
 
+    @media screen and (max-width:480px) {
+      @include DisplayFlexCol;
+    }
+
     .order-service{
        @include DisplayFlexCol;
        align-items: center;

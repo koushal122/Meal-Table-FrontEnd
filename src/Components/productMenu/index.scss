@@ -6,6 +6,10 @@
     @include DisplayFlexRow;
     justify-content: center;
     gap: 10px;
+
+    @media screen and (max-width:400px) {
+      @include DisplayFlexCol;
+    }
 }
 
 .menu-type-option{
@@ -36,6 +40,6 @@
 }
 
 .menu-items{
-    width: 33%;
-    margin: 10px 0px;
+    width: 30%;
+    margin: 10px 5px;
 }

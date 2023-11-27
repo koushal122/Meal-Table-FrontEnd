@@ -18,16 +18,6 @@ import Reviews from '../../Components/reviews';
 import Blog from '../../Components/blog';
 import Footer from '../../Components/footer';
 const Home = () => {
-    const [navChange,setNavchange]=useState(false);
-
-    const changeNavStyle=()=>{
-        if(window.scrollY>=300){
-           setNavchange(true)
-        }else{
-           setNavchange(false);
-        }
-    }
-    window.addEventListener("scroll", changeNavStyle);
     return (
         <>
         <Header/>

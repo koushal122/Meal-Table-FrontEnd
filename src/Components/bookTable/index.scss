@@ -16,6 +16,9 @@
         &::placeholder{
             color: white;
         }
+        @media screen and (max-width:400px) {
+                 width:100%;
+        }
     }
 
     button{
@@ -34,6 +37,10 @@
 .book-name,.book-date-time{
     display: flex;
     gap: 5px;
+
+    @media screen and (max-width:400px) {
+         flex-direction: column;
+       }
 }
 
 .book-msg-appoint{

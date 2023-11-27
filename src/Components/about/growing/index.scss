@@ -8,16 +8,6 @@
   inherits: false;
 }
 
-// div {
-//   animation: counter 4s ease-in-out;
-//   counter-reset: num var(--num);
-//   font: 800 40px system-ui;
-//   padding: 2rem;
-// }
-// div::before {
-//   content: counter(num);
-// }
-
 
 
 
@@ -30,6 +20,10 @@
     color: white;
     text-align: center;
     font: 800 20px system-ui;
+
+    @media screen and (max-width:600px) {
+      @include DisplayFlexCol;
+    }
 
     div{
         position: relative;

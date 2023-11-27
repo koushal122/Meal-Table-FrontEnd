@@ -7,7 +7,11 @@
    padding-top: 8%;
    padding-left: 5%;
    padding-bottom: 3%;
-   width: 100%
+   width: 100%;
+
+   @media screen and (max-width:450px) {
+        @include DisplayFlexCol;
+      }
 }
 
 .info-details{
@@ -33,4 +37,9 @@
 .info-location,.info-timing,.info-addres{
     @include DisplayFlexRow;
     width: 33.3%;
+
+   @media screen and (max-width:450px) {
+        width:100%;
+        margin:10px 0px;
+      }
 }

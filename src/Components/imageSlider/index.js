@@ -26,7 +26,7 @@ const ImageSlider = ({Images}) => {
                 <span className="cursive-text-primary-color">Welcome</span>
                 <h1 className="slider-title">{item.title}</h1>
                 <p className="slider-moral">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <div>
+                <div className="order-and-view-menu-button-container">
                     <button className="order-button">Order Now</button>
                     <button className="view-menu-button">View Menu</button>
                 </div>

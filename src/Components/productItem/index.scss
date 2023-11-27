@@ -5,7 +5,10 @@
     @include DisplayFlexCol;
     align-items: center;
     color: white;
-    width: 20%;
+    @media screen and (min-width:701px) {
+        width: 20%;
+    }
+    
 
     .product-image{
         width: 70%;
@@ -15,6 +18,7 @@
     .product-name{
         color: white;
         text-transform: uppercase;
+        text-align: center;
         font-size: 18px;
         font-weight: 400;
         font-family: "Josefin Sans", Arial, sans-serif;

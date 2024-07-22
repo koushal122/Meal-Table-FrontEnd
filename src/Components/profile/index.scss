@@ -1,0 +1,21 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/colors.scss';
+
+
+.profile{
+    align-self: center;
+    display: flex;
+    gap: 0.5rem;
+
+    .profile-icon{
+        align-self: center;
+        color: $PROFILE_COLOR;
+    }
+
+
+    p{
+        color: white;
+        font-weight: bolder;
+    }
+
+}

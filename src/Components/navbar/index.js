@@ -1,14 +1,16 @@
 import React, {useState} from 'react'
 import './index.scss';
-import cart from '../../Images/cart-icon.png';
 import { Link } from 'react-router-dom';
 import MenuIcon from '../../Images/menu-icon-white.png';
-import { set } from 'mongoose';
+import Profile from '../profile';
+import { useSelector } from 'react-redux';
+import useAuth from '../../customHooks/useAuth';
 
 const Header = ({className}) => {
 
   const [navChange,setNavchange]=useState(false);
   const [displayMenu,setDisplayMenu] = useState(true);
+  const {isAuthenticated} =useAuth();
 
     const changeNavStyle=()=>{
         if(window.scrollY>=300){
@@ -32,11 +34,11 @@ const Header = ({className}) => {
               <div>COFFEE</div>
               <small>BLEND</small>
         </div>
-        <div className='navbar-menu-icon' onClick={()=>{setDisplayMenu(!displayMenu)}}>
-            <img src={MenuIcon} alt='MenuICon' className='navbar-menu-icon-image' />
-            <p>Menu</p>
-       </div>
       </div>
+      <div className='navbar-menu-icon' onClick={()=>{setDisplayMenu(!displayMenu)}}>
+            <img src={MenuIcon} alt='MenuICon' className='navbar-menu-icon-image' />
+      </div>
+      <div>
         {
           displayMenu||window.width>=1100?
           <ul className="navbar-list">
@@ -45,12 +47,25 @@ const Header = ({className}) => {
             <Link to='/services' className='navbar-list-item' ><li>SERVICES</li></Link>
             <Link to='/blog' className='navbar-list-item' ><li>BLOG</li></Link>
             <Link to='/about' className='navbar-list-item' ><li>ABOUT</li></Link>
-            <Link to='/shop' className='navbar-list-item' ><li>SHOP</li></Link>
             <Link to='/contact' className='navbar-list-item' ><li >CONTACT</li></Link>
-            <Link to='/cart' className='navbar-list-item'><img src={cart} alt='cart' style={{width:'20px'}} /></Link>
+            <Link to='/cart' className='navbar-list-item'><i class="fa-solid fa-cart-shopping badge fa-xl" value={isAuthenticated?8:0}></i></Link>
           </ul>
           :null
         }
+      </div>
+      {
+         isAuthenticated ?
+          (
+             <Profile/>
+          ):
+          (
+              <div className='login-signup-button'>
+                <Link to='/login'><button type='button' className='login'>Login</button></Link>
+                <Link to='/signup'><button type='button' className='signup'>Signup</button></Link>
+              </div>
+          )
+      }
+      
        
     </div>
   )

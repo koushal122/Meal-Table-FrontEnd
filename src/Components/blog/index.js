@@ -8,8 +8,8 @@ const Blog = ({className}) => {
         <h1 className='blogs-container-heading'>RECENT FROM BLOG</h1>
         <div className="blogs-items-container">
             {
-                blogs.map((blog)=>{
-                    return <BlogItem blog={blog}/>
+                blogs.map((blog,index)=>{
+                    return <BlogItem key={index} blog={blog}/>
                 })
             }
         </div>

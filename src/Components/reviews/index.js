@@ -10,8 +10,8 @@ const Reviews = () => {
         <HeadingText heading1={"Testimony"} heading2={"Customer Says"}/>
         <div className="reviews">
             {
-                reviews.map((review)=>{
-                    return <ReviewItem data={review} className={"review-width"}/>
+                reviews.map((review,index)=>{
+                    return <ReviewItem key={index} data={review} className={"review-width"}/>
                 })
             }
         </div>

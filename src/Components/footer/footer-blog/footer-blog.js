@@ -7,9 +7,9 @@ const FooterBlog = () => {
     <div className='footer-blog-container'>
         <h3>RECENT BLOG</h3>
         {
-            blogs.map((blog)=>{
+            blogs.map((blog,index)=>{
                 return (
-                    <div className='footer-blog'>
+                    <div key={index} className='footer-blog'>
                         <img src={blog.thumbnail} alt='blogImage' className='footer-blog-image' />
                         <div className='footer-blog-details'>
                             <h3 className='footer-blog-title'>{blog.title}</h3>

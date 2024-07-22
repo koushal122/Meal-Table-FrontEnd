@@ -6,7 +6,7 @@ import { starterProduct } from '../../Constants/constants'
 import { dessertsProduct } from '../../Constants/constants'
 import ProductItem from '../productItem'
 
-const ProductMenu = () => {
+const ProductMenu = () => {        
   const [activeMenuType,setActiveMenuType]=useState(1);
   return (
     <div>
@@ -24,20 +24,20 @@ const ProductMenu = () => {
                     activeMenuType===1?
                     <div className="menu-items-container">
                         {
-                            starterProduct.map((product)=>{
-                                return <ProductItem Item={product} className="menu-items"/>
+                            starterProduct.map((product,index)=>{
+                                return <ProductItem key={index} Item={product} className="menu-items"/>
                             })
                         }
                     </div>:(
                         activeMenuType===2?
                         <div className="menu-items-container" >
-                            {mainDishProducts.map((product)=>{
-                                return <ProductItem Item={product} className="menu-items" />
+                            {mainDishProducts.map((product,index)=>{
+                                return <ProductItem key={index} Item={product} className="menu-items" />
                             })}
                         </div>:
                         <div className="menu-items-container" >
-                            {dessertsProduct.map((product)=>{
-                                return <ProductItem Item={product} className="menu-items"/>
+                            {dessertsProduct.map((product,index)=>{
+                                return <ProductItem key={index} Item={product} className="menu-items"/>
                             })}
                         </div>
                     )

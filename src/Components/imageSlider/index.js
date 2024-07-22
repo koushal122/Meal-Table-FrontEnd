@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './index.scss';
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const ImageSlider = ({Images}) => {
 
@@ -27,8 +28,8 @@ const ImageSlider = ({Images}) => {
                 <h1 className="slider-title">{item.title}</h1>
                 <p className="slider-moral">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                 <div className="order-and-view-menu-button-container">
-                    <button className="order-button">Order Now</button>
-                    <button className="view-menu-button">View Menu</button>
+                    <Link to='/menu'><button className="order-button">Order Now</button></Link>
+                    <Link to='/menu'><button className="view-menu-button">View Menu</button></Link>
                 </div>
               </div>
             </div>

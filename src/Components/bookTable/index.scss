@@ -12,7 +12,7 @@
         width: 50%;
         border: none;
         border-bottom: 1px solid white;
-        margin:2px;
+        margin:5px;
         &::placeholder{
             color: white;
         }
@@ -21,11 +21,11 @@
         }
     }
 
-    button{
+    .check-table{
         background-color: white;
         color: black;
-        padding: 8px;
-        width: 50%;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
         align-items: start;
         &:hover{
             background-color: black;
@@ -47,10 +47,27 @@
     display: flex;
     gap: 4px;
     margin-top: 4px;
+}
 
-    button{
-        font-size: 1em;
-        font-weight: 700;
-    }
+.date-time-seat{
+    display: flex;
+
+    @media screen and (max-width:400px) {
+       flex-direction: column;
+     }
+}
+
+.book-table-phone{
+    display: flex;
+
+    @media screen and (max-width:400px) {
+        flex-direction: column;
+      }
+    
+      .book-table-button{
+        width: 50%;
+        border-radius: 0.5rem;
+      }
+
 }
 

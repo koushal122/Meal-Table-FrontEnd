@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../Components/navbar';
 import AdressAndLocation from '../../Components/adressAndLocation';
 import BookTable from '../../Components/bookTable';
 import ImageSlider from '../../Components/imageSlider';
 import { CAROUSEL_SLIDERS , products} from '../../Constants/constants';
-import './home.scss'
+import './home.scss';
 import About from '../../Components/about/story';
 import Services from '../../Components/services';
 import Coffe_cup_image from '../../Images/coffee_cup.png';
@@ -17,7 +17,14 @@ import ProductMenu from '../../Components/productMenu';
 import Reviews from '../../Components/reviews';
 import Blog from '../../Components/blog';
 import Footer from '../../Components/footer';
+import { Link } from 'react-router-dom';
+
+
+
+
 const Home = () => {
+   useEffect(()=> {
+   },[]);
     return (
         <>
         <Header/>
@@ -33,7 +40,7 @@ const Home = () => {
                  <span>Discover</span>
                  <h3>OUR MENU</h3>
                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                 <button>View Full Menu</button>
+                 <Link to='/menu'><button>View Full Menu</button></Link>
             </div>
             <div className="home-menu-section-images-row">
                <div className="home-menu-section-images-col">
@@ -49,8 +56,8 @@ const Home = () => {
         <GrowingNumbers/>
         <div className="product-item">
             {
-               products.map((product)=>{
-                  return <ProductItem Item={product}/>
+               products.map((product,index)=>{
+                  return <ProductItem key={index} Item={product}/>
                })
             }
          </div>

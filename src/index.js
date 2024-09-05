@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
 import Home from './Pages/home/home';
 import Menu from './Pages/menu/menu';
 import ServicesPage from './Pages/services';
@@ -16,57 +16,99 @@ import Login from './Pages/login';
 import { Signup } from './Pages/signup';
 import Store from './store';
 import {Provider} from 'react-redux'
+import Products from './Pages/Admin/products';
+import Dashboard from './Pages/Admin/dashboard';
+import PrivateRoute from './PrivateRoute';
+import Table from './Pages/Admin/tables';
+import Tickets from './Pages/Admin/tickets';
+import {PersistGate} from 'redux-persist/integration/react'
+import {persistStore} from 'redux-persist'
+import Orders from './Pages/orders';
+import Bookings from './Pages/bookings';
+import AdminPrivateRoute from './AdminPrivateRoute';
+import AdminOrder from './Pages/Admin/orders';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const router=createBrowserRouter(
-  [
-    {
-      path:'/',
-      element:<Home/>,
-    },
-    {
-      path:'/menu',
-      element:<Menu/>
-    },
-    {
-      path:'/services',
-      element:<ServicesPage/>
-    },
-    {
-      path:'/blog',
-      element:<BlogPage/>
-    },
-    {
-      path:'/about',
-      element:<AboutPage/>
-    },
-    {
-      path:'/cart',
-      element:<Cart/>
-    },
-    {
-      path:'/shop',
-      element:<ShopPage/>
-    },
-    {
-      path:'/contact',
-      element:<Contact/>
-    },
-    {
-      path:'/login',
-      element:<Login/>
-    },
-    {
-      path:'/signup',
-      element:<Signup/>
-    }
-  ]
-)
+let persistor = persistStore(Store);
 root.render(
-  <Provider store={Store} >
-    <RouterProvider router={router}></RouterProvider>
+  <Provider store={Store}>
+    <PersistGate persistor={persistor}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          {/* User Authenticated Routes */}
+          <Route
+            path="/orders"
+            element={
+              <PrivateRoute>
+                <Orders />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/bookings"
+            element={
+              <PrivateRoute>
+                <Bookings />
+              </PrivateRoute>
+            }
+          />
+          {/* Admin Authenticated Routes */}
+          <Route
+            path="/admin/products"
+            element={
+              <AdminPrivateRoute>
+                <Products />
+              </AdminPrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/tables"
+            element={
+              <AdminPrivateRoute>
+                <Table />
+              </AdminPrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <AdminPrivateRoute>
+                <Dashboard />
+              </AdminPrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/tickets"
+            element={
+              <AdminPrivateRoute>
+                <Tickets />
+              </AdminPrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/orders"
+            element={
+              <AdminPrivateRoute>
+                <AdminOrder />
+              </AdminPrivateRoute>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </PersistGate>
   </Provider>
 );
+
 
   
 

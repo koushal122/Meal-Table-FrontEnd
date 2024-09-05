@@ -11,7 +11,6 @@ const AdressAndLocation = ({className}) => {
           <img src={callIcon} alt='call icon' className="info-icons" />
           <div className='info-details'>
             <h3 className='info-details-header'>000 (123) 456 7890</h3>
-            <p className='info-details-details'>A small river named Duden flows by their place and supplies.</p>
           </div>
         </div>
         <div className="info-addres">
@@ -25,7 +24,7 @@ const AdressAndLocation = ({className}) => {
         <div className="info-timing">
           <img src={clockIcon} alt='call icon' className="info-icons" />
           <div className='info-details'>
-            <h3 className='info-details-header' >Open Monday-Friday</h3>
+            <h3 className='info-details-header' >Open Monday-Sunday</h3>
             <p className='info-details-details' >8:00am - 9:00pm</p>
           </div>
         </div>

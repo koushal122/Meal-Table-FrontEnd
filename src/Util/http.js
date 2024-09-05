@@ -5,10 +5,6 @@ import { BASE_URL } from '../config'
 const http = axios.create({
     baseURL:BASE_URL,
     timeout:60000,
-    withCredentials: true,
-    headers: {
-        'Content-Type': 'application/json',
-    },
 })
 
 http.interceptors.request.use(

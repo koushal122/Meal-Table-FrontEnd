@@ -2,7 +2,7 @@
 @import '../../scss/colors.scss';
 
 .cart-body{
-    margin-top: 6%;
+    margin-top: 6rem;
     color: white;
     display: flex;
     flex-direction: column;
@@ -36,4 +36,10 @@
         border-radius: 0.5rem;
         align-self: center
     }
+}
+
+.price-checkout-button{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
 }

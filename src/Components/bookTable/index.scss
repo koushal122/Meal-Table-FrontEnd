@@ -52,7 +52,28 @@
 .date-time-seat{
     display: flex;
 
+    .seat-count{
+        width: 50%;
+        @media screen and (max-width:400px) {
+            width: 100%;
+         }
+    }
+
+    .start-time{
+        width: 25%;
+        @media screen and (max-width:400px) {
+            width: 100%;
+         }
+    }
+
+    .end-time{
+        width: 25%;
+        @media screen and (max-width:400px) {
+            width: 100%;
+         }
+    }
     @media screen and (max-width:400px) {
+        width: 100%;
        flex-direction: column;
      }
 }

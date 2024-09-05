@@ -3,58 +3,61 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import MenuIcon from '../../Images/menu-icon-white.png';
 import Profile from '../profile';
-import { useSelector } from 'react-redux';
-import useAuth from '../../customHooks/useAuth';
 
-const Header = ({className}) => {
+import useAuth from '../../customHooks/useAuth';
+import useWindowDimensions from '../../customHooks/windowDimension';
+
+const Header = () => {
 
   const [navChange,setNavchange]=useState(false);
-  const [displayMenu,setDisplayMenu] = useState(true);
+  const [displayMenu,setDisplayMenu] = useState(false);
   const {isAuthenticated} =useAuth();
+  const {height,width} = useWindowDimensions();
 
-    const changeNavStyle=()=>{
-        if(window.scrollY>=300){
-           setNavchange(true)
-        }else{
-           setNavchange(false);
-        }
-    }
-    window.addEventListener("scroll", changeNavStyle);
-    window.addEventListener("resize", ()=>{
-      if (window.innerWidth >= 1100){
-         setDisplayMenu(true);
-       } else {
-          setDisplayMenu(false);
+  const changeNavStyle=()=>{
+      if(window.scrollY>=300){
+          setNavchange(true)
+      }else{
+          setNavchange(false);
       }
-    });
+  }
+  window.addEventListener("scroll", changeNavStyle);
+  window.addEventListener("resize", ()=>{
+    if (window.innerWidth >= 1100){
+        setDisplayMenu(true);
+      } else {
+        setDisplayMenu(false);
+    }
+  });
+
   return (
-    <div className={navChange?"navbar navbar-style":"navbar"}>
+     <div className={navChange?"navbar navbar-style":"navbar"}>
       <div className='navbar-logo-with-menu'>
         <div id="logo">
-              <div>COFFEE</div>
-              <small>BLEND</small>
+              <div>Meal</div>
+              <small>Table</small>
         </div>
       </div>
       <div className='navbar-menu-icon' onClick={()=>{setDisplayMenu(!displayMenu)}}>
-            <img src={MenuIcon} alt='MenuICon' className='navbar-menu-icon-image' />
+            <img src={MenuIcon} alt='MenuIcon' className='navbar-menu-icon-image' />
       </div>
       <div>
         {
-          displayMenu||window.width>=1100?
+          width>=1100||displayMenu?
           <ul className="navbar-list">
-            <Link to='/' className='navbar-list-item'><li>HOME</li></Link>
-            <Link to='/menu' className='navbar-list-item' ><li >MENU</li></Link>
-            <Link to='/services' className='navbar-list-item' ><li>SERVICES</li></Link>
-            <Link to='/blog' className='navbar-list-item' ><li>BLOG</li></Link>
-            <Link to='/about' className='navbar-list-item' ><li>ABOUT</li></Link>
-            <Link to='/contact' className='navbar-list-item' ><li >CONTACT</li></Link>
-            <Link to='/cart' className='navbar-list-item'><i class="fa-solid fa-cart-shopping badge fa-xl" value={isAuthenticated?8:0}></i></Link>
+            <Link to='/' className='navbar-list-item' onClick={()=>{setDisplayMenu(!displayMenu)}}><li>HOME</li></Link>
+            <Link to='/menu' className='navbar-list-item' onClick={()=>{setDisplayMenu(!displayMenu)}}><li >MENU</li></Link>
+            <Link to='/services' className='navbar-list-item' onClick={()=>{setDisplayMenu(!displayMenu)}}><li>SERVICES</li></Link>
+            <Link to='/blog' className='navbar-list-item' onClick={()=>{setDisplayMenu(!displayMenu)}} ><li>BLOG</li></Link>
+            <Link to='/about' className='navbar-list-item' onClick={()=>{setDisplayMenu(!displayMenu)}} ><li>ABOUT</li></Link>
+            <Link to='/contact' className='navbar-list-item' onClick={()=>{setDisplayMenu(!displayMenu)}} ><li >CONTACT</li></Link>
+            <Link to='/cart' className='navbar-list-item' onClick={()=>{setDisplayMenu(!displayMenu)}}><i class="fa-solid fa-cart-shopping badge fa-xl" value={isAuthenticated?8:0}></i></Link>
           </ul>
           :null
         }
       </div>
       {
-         isAuthenticated ?
+          isAuthenticated ?
           (
              <Profile/>
           ):
@@ -65,9 +68,7 @@ const Header = ({className}) => {
               </div>
           )
       }
-      
-       
-    </div>
+     </div>
   )
 }
 

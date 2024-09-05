@@ -1,0 +1,47 @@
+@import '../../scss/colors.scss';
+
+.layout-admin{
+    display: flex;
+    height: 100vh;
+
+    .admin-nav{
+        background-color: $PRIMARY_COLOR;
+        margin-right: 1rem;
+        display: flex;
+        position: fixed;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .admin-navbar-list{
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            justify-content: space-around;
+            list-style: none;
+            font-weight: 500;
+            a{
+                padding: 1rem;
+
+                &:hover{
+                    
+                    
+                    border: 2px solid red;
+                 }
+            }
+            
+        }
+    }
+}
+
+.logout-admin{
+    text-align: center;
+    font-size: large;
+    font-weight: 500;
+}
+
+.admin-body{
+    margin-left: 10rem;
+    width: 100%;
+    margin-right: 0.5rem;
+}

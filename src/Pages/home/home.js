@@ -53,15 +53,8 @@ const Home = () => {
                </div>
             </div>
         </div>
-        <GrowingNumbers/>
-        <div className="product-item">
-            {
-               products.map((product,index)=>{
-                  return <ProductItem key={index} Item={product}/>
-               })
-            }
-         </div>
-         <ProductMenu/>
+         <GrowingNumbers/>
+         <ProductMenu itemLimit={6}/>
          <Reviews/>
          <Blog/>
          <hr></hr>

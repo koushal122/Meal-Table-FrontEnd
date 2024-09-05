@@ -1,48 +1,6 @@
-
-export const cartItemsResponse={
-    "id": 1,
-    "numberOfItems": 1,
-    "user": {
-        "id": 1,
-        "userName": "koushal123",
-        "userEmail": "koushaljha889@gmail.com",
-        "role": "USER",
-        "enabled": true,
-        "credentialsNonExpired": true,
-        "authorities": null,
-        "username": "koushaljha889@gmail.com",
-        "accountNonExpired": true,
-        "accountNonLocked": true
-    },
-    "products": [
-        {
-            "id": 1,
-            "type": "drink",
-            "name": "Banana juice",
-            "description": "Tasty Banana juice",
-            "price": 150.0
-        },
-        {
-            "id": 3,
-            "type": "drink",
-            "name": "Banana juice",
-            "description": "Tasty Banana juice",
-            "price": 180.0
-        },
-        {
-            "id": 4,
-            "type": "drink",
-            "name": "Banana juice",
-            "description": "Tasty Banana juice",
-            "price": 200.0
-        }
-    ],
-    "productQuantityWithId": {
-        "1": 2,
-        "3":1,
-        "4":5
-    },
-    "totalPrice": 900.0
-}
-
 export const GET_CART_BY_USER_ENDPOINT = '/api/cart/get';
+export const UPDATE_QUANTITY_ENDPOINT = '/api/cart/update';
+export const REMOVE_PRODUCT_ENDPOINT = '/api/cart/remove';
+export const GET_ALL_USER_ADDRESS_ENDPOINT = '/api/user-details/get-all-address';
+export const ADD_NEW_ADDRESS_ENDPOINT = '/api/user-details/add-address'
+export const CREATE_NEW_ORDER_ENDPOINT = '/api/orders/create-order'

@@ -6,19 +6,18 @@ import ImageSlider from '../../Components/imageSlider'
 import { CAROUSEL_SLIDERS , products} from '../../Constants/constants';
 import ProductMenu from '../../Components/productMenu'
 import Footer from '../../Components/footer'
+import AppLayout from '../../layout/appLayout'
+import './menu.scss'
 
 const Menu = () => {
   return (
-    <div>
-        <Header/>
-        <ImageSlider Images={CAROUSEL_SLIDERS}/>
-        <div className="home-adress-book-table">
+    <AppLayout>
+        <div className="menu-container">
           <AdressAndLocation className="address-location" ></AdressAndLocation>
           <BookTable className="home-book-table" ></BookTable>
         </div>
         <ProductMenu/>
-        <Footer/>
-    </div>
+    </AppLayout>
   )
 }
 

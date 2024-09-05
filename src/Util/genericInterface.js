@@ -1,12 +1,13 @@
 import http from './http'
-import { BASE_URL } from '../config'
-
-const getFullPath = endPoint => BASE_URL+endPoint;
 
 const genericInterface=(endPoint)=>({
-    create: async(payload,params={})=> http.post(getFullPath(endPoint),payload,{params}),
-    read: async(params={})=> http.get(getFullPath(endPoint),{params}),
-    delete: async()=> http.delete(getFullPath(endPoint))
+    create: async(payload,params={})=> http.post(endPoint,payload,{params}),
+    read: async(params={})=> http.get(endPoint,{params}),
+    delete: async(params={})=> http.delete(endPoint,{params}),
+    put: async(payload,params={})=> http.put(endPoint,payload,{params}),
 })
+
+genericInterface.post=genericInterface.create
+genericInterface.get=genericInterface.read
 
 export default genericInterface;

@@ -1,14 +1,22 @@
 
 .cart-item{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: white;
-    width: max-content;
     border-radius: 1rem;
     color: black;
     padding: 0.5rem;
     gap: 2rem;
+    width: 90%;
     align-self: center;
+
+    @media screen and (min-width:400px) and (max-width:500px) {
+        gap: 1rem;
+      }
+
+      @media screen and (max-width:400px) {
+        gap: 0rem;
+      }
 
     .cart-image{
         width: 5rem;
@@ -17,6 +25,7 @@
     }
     .name-description{
         align-self: center;
+        width: 30%;
     }
     .name{
         font-weight: bolder;
@@ -36,6 +45,14 @@
             align-self: center;
             margin: 1rem;
         }
+
+        p{
+            text-align: center;
+        }
+
+        @media screen and (max-width:500px) {
+            flex-direction: column;;
+          }
     }
 
     .price{

@@ -1,25 +1,12 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { isAuthenticated } from './auth';
+import { useSelector } from 'react-redux';
+import { Route, Navigate } from 'react-router-dom';
+import useAuth from './customHooks/useAuth';
 
-const PrivateRoute = ({ children, ...rest }) => {
-    return (
-        <Route
-            {...rest}
-            render={({ location }) =>
-                isAuthenticated() ? (
-                    children
-                ) : (
-                    <Redirect
-                        to={{
-                            pathname: '/login',
-                            state: { from: location }
-                        }}
-                    />
-                )
-            }
-        />
-    );
+const PrivateRoute = ({ children }) => {
+    const { isAuthenticated } = useAuth();
+    return isAuthenticated ? children : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;
+

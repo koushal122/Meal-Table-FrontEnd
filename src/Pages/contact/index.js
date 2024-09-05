@@ -9,7 +9,6 @@ const Contact = () => {
   return (
     <div>
         <Header/>
-        <ImageSlider Images={CAROUSEL_SLIDERS}/>
         <ContactUS/>
         <Footer/>
     </div>

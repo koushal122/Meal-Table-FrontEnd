@@ -3,9 +3,10 @@
 
 .contact-us-container{
     @include DisplayFlexRow;
-    padding: 4% 2%;
+    padding: 0% 2%;
     justify-content: center;
     gap: 2%;
+    margin-top: 6rem;
 
     .contact-information{
         @include DisplayFlexCol;
@@ -28,6 +29,15 @@
 
         .name-email{
             @include DisplayFlexRow;
+
+            @media screen and (max-width:600px) {
+                flex-direction: column;
+            }
+        }
+
+        textarea{
+            width: 80%;
+            resize: vertical;
         }
     }
 

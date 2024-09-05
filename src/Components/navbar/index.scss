@@ -21,6 +21,7 @@
    justify-content: center;
    color: white;
    font-weight: 600;
+   letter-spacing: 0.1rem;
    font-size:22px;
    font-family: "Josefin Sans", Arial, sans-serif;
    margin-left: 10%;
@@ -157,4 +158,13 @@
       border-bottom-right-radius: 1rem;
    }
 
+}
+
+.profile-option{
+   background-color: white;
+}
+
+.nav-prof{
+   display: flex;
+   flex-direction: column;
 }

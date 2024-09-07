@@ -21,7 +21,6 @@ const CartItem = (props) => {
   }
 
 
-
   return (
     <div className='cart-item'>
         <img alt='Item' src={getImageFullUrl(imagePath)} className='cart-image'/>

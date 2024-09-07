@@ -71,20 +71,19 @@
    letter-spacing: 2px;
    padding-top: 1.5rem;
    padding-bottom: 1.5rem;
-   padding-left: 20px;
-   padding-right: 20px;
+   padding-left: 0.5rem;
+   padding-right: 0.4rem;
    cursor: pointer;
    text-decoration: none;
-   font-weight: 700;
+   font-weight: 400;
 
    &:hover{
       color: red;
-      font-weight: 800;
-      border: 2px solid $PRIMARY_COLOR;
+      border: 0px solid white;
    }
 
-   &:active{
-      background-color: $PRIMARY_COLOR;
+   @media screen and (max-width: 600px) {
+      font-size: small;
    }
 }
 

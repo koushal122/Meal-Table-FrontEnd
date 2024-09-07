@@ -6,13 +6,15 @@ const useAuth = () =>{
     const dispatch =useDispatch();
     const isAuthenticated = useSelector((state) => state.authentication.isUserAuthenticated);
     const isUserAdmin = useSelector((state) => state.authentication.isAdmin);
+    const canCreateAdmin = useSelector((state) => state.authentication.canCreateAdmin);
 
-    const handleLogin = (token,email,username,isadmin) => {
+    const handleLogin = (token,email,username,isadmin,canCreateAdmin) => {
         const userDetails = {
             token :token,
             userEmail :email,
             userName : username,
-            isAdmin : isadmin
+            isAdmin : isadmin,
+            canCreateAdmin : canCreateAdmin
         }
         dispatch(login(userDetails));
     }
@@ -21,7 +23,7 @@ const useAuth = () =>{
         dispatch(logout());
     }
 
-    return {isAuthenticated,login:handleLogin, logout:handleLogout,isUserAdmin}
+    return {isAuthenticated,login:handleLogin, logout:handleLogout,isUserAdmin,canCreateAdmin}
 
 }
 

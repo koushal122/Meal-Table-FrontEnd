@@ -27,6 +27,7 @@ import Orders from './Pages/orders';
 import Bookings from './Pages/bookings';
 import AdminPrivateRoute from './AdminPrivateRoute';
 import AdminOrder from './Pages/Admin/orders';
+import Administration from './Pages/Admin/administration';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let persistor = persistStore(Store);
@@ -100,6 +101,14 @@ root.render(
             element={
               <AdminPrivateRoute>
                 <AdminOrder />
+              </AdminPrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/administration"
+            element={
+              <AdminPrivateRoute>
+                <Administration />
               </AdminPrivateRoute>
             }
           />

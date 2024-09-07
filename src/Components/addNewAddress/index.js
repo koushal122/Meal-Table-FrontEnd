@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './index.scss'
 
 const AddNewAddress = ({ addNewAddress, onClose }) => {
-  // State to manage form data
   const [formData, setFormData] = useState({
     name: '',
     phoneNumber: '',
@@ -13,7 +12,7 @@ const AddNewAddress = ({ addNewAddress, onClose }) => {
     stateName: ''
   });
 
-  // Handle form input changes
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,10 +20,10 @@ const AddNewAddress = ({ addNewAddress, onClose }) => {
     });
   };
 
-  // Handle form submission
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    addNewAddress(formData,onClose); // Call the function passed in props with the form data
+    addNewAddress(formData,onClose); 
   };
 
   return (

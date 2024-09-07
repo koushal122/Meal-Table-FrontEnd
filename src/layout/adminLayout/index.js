@@ -5,7 +5,7 @@ import useAuth from '../../customHooks/useAuth';
 
 const AdminLayout = (props) => {
   const {children} = props;
-  const {logout} =useAuth();
+  const {logout,canCreateAdmin} =useAuth();
   const navigate =useNavigate();
 
   const handleLogout = () =>{
@@ -22,6 +22,7 @@ const AdminLayout = (props) => {
                 <Link to='/admin/tables' className='navbar-list-item' ><li >Tables</li></Link>
                 <Link to='/admin/tickets' className='navbar-list-item' ><li>Tickets</li></Link>
                 <Link to='/admin/orders' className='navbar-list-item' ><li>Orders</li></Link>
+                {canCreateAdmin && <Link to='/admin/administration' className='navbar-list-item' ><li>Administration</li></Link>}
             </ul>
             <div>
                 <p className='logout-admin' onClick={()=>{handleLogout()}}>Logout</p>

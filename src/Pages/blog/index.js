@@ -4,15 +4,14 @@ import Header from '../../Components/navbar';
 import ImageSlider from '../../Components/imageSlider';
 import Blog from '../../Components/blog';
 import Footer from '../../Components/footer';
+import AppLayout from '../../layout/appLayout';
 
 const BlogPage = () => {
   return (
-    <div>
-        <Header/>
+    <AppLayout>
         <ImageSlider Images={CAROUSEL_SLIDERS}/>
         <Blog/>
-        <Footer/>
-    </div>
+    </AppLayout>
   )
 }
 

@@ -70,6 +70,7 @@ const Bookings = () => {
         <p className='booking-header'>Your table bookings</p>
         <div className='booking-body'>
             {
+                bookings.length ===0 ? <p className='no-data'>Please book table.</p> :
                 bookings.map((booking)=>{
                     return (
                         <div className='booking-container'>

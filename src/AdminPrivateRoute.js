@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Route, Navigate } from 'react-router-dom';
 import useAuth from './customHooks/useAuth';
 

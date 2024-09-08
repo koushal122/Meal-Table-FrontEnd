@@ -54,6 +54,7 @@ const Orders = () => {
         <p className='order-header'>Your orders</p>
         <div className='order-body'>
             {
+                ordersList.length ===0 ? <p className='no-data'>You haven't Order anything yet.</p> :
                 ordersList.map((order)=>{
                     return  (
                     <div className='order-container'>

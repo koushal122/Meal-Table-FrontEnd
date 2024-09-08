@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import genericInterface from '../../Util/genericInterface'
 import * as constants from './constants.js'
 import { emailValidator,passwordValidator } from '../../helper/validations/validations'
+import AppLayout from '../../layout/appLayout/index.js'
 
 export const Signup = () => {
   const [name, setName] = useState('');
@@ -43,8 +44,7 @@ export const Signup = () => {
   };
 
   return (
-    <>
-     <Header/>
+    <AppLayout showFooter={false}>
      <div className='signup-page'>
         <div className='signup-quote'>
             <p>Welcome to our family</p>
@@ -82,7 +82,7 @@ export const Signup = () => {
               <Link to='/login'>Already have an account? Login here.</Link>
         </div>
      </div>
-    </>
+    </AppLayout>
   )
 }
 

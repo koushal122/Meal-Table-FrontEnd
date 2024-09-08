@@ -1,17 +1,17 @@
 import React from 'react'
 import Header from '../../Components/navbar'
-import ImageSlider from '../../Components/imageSlider'
 import Footer from '../../Components/footer'
 import { CAROUSEL_SLIDERS } from '../../Constants/constants'
+import './index.scss'
 
 const AppLayout = (props) => {
-  const {children} = props
+  const {children,showHeader=true,showFooter=true} = props
   return (
-     <>
-        <Header/>
+     <div className='user-layout'>
+        {showHeader && <Header/>}
         {children}
-        <Footer/>
-     </>
+        {showFooter && <Footer/>}
+     </div>
   )
 }
 

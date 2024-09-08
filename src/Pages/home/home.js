@@ -18,6 +18,7 @@ import Reviews from '../../Components/reviews';
 import Blog from '../../Components/blog';
 import Footer from '../../Components/footer';
 import { Link } from 'react-router-dom';
+import AppLayout from '../../layout/appLayout';
 
 
 
@@ -26,8 +27,7 @@ const Home = () => {
    useEffect(()=> {
    },[]);
     return (
-        <>
-        <Header/>
+        <AppLayout>
         <ImageSlider Images={CAROUSEL_SLIDERS}/>
         <div className="home-adress-book-table">
           <AdressAndLocation className="address-location" ></AdressAndLocation>
@@ -58,8 +58,7 @@ const Home = () => {
          <Reviews/>
          <Blog/>
          <hr></hr>
-         <Footer/>
-         </>
+         </AppLayout>
         
       );
 }

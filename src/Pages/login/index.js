@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux'
 import { toggleUserAuthentication } from '../../helper/Slices/authSlice'
 import useAuth from '../../customHooks/useAuth'
 import { emailValidator } from '../../helper/validations/validations'
+import AppLayout from '../../layout/appLayout'
 
 
 const Login = () => {
@@ -43,8 +44,7 @@ const Login = () => {
 
 
   return (
-    <>
-     <Header/>
+    <AppLayout showFooter={false}>
      <div className='login-page'>
         <div className='login-quote'>
             <p>Welcome Back!</p>
@@ -58,7 +58,7 @@ const Login = () => {
             <Link to='/signup'>New to our family ? Register here.</Link>
         </div>
      </div>
-    </>
+    </AppLayout>
   )
 }
 

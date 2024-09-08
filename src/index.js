@@ -10,7 +10,6 @@ import ServicesPage from './Pages/services';
 import BlogPage from './Pages/blog';
 import AboutPage from './Pages/about';
 import Cart from './Pages/cart';
-import ShopPage from './Pages/shop/shop';
 import Contact from './Pages/contact';
 import Login from './Pages/login';
 import { Signup } from './Pages/signup';
@@ -42,7 +41,6 @@ root.render(
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/shop" element={<ShopPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

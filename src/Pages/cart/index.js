@@ -9,6 +9,8 @@ import genericInterface from '../../Util/genericInterface'
 import { useSelector } from 'react-redux'
 import CheckoutAddress from '../../Components/checkoutAddress'
 import { useNavigate } from 'react-router-dom'
+import App from '../../App'
+import AppLayout from '../../layout/appLayout'
 
 const Cart = () => {
   const getCartByUserApi = genericInterface(constants.GET_CART_BY_USER_ENDPOINT);
@@ -129,8 +131,7 @@ const Cart = () => {
   },[isAuthenticated])
 
   return (
-   <>
-   <Header/>
+   <AppLayout showFooter={false}>
     {
       isAuthenticated?
         (
@@ -156,7 +157,7 @@ const Cart = () => {
          (isAuthenticated && showAddresses) && <CheckoutAddress addresses={userAddress} addNewAddress={addNewAddress} deliver={createOrder}/>
     }
    
-   </>
+   </AppLayout>
   )
 }
 

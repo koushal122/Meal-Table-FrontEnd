@@ -6,17 +6,16 @@ import About from '../../Components/about/story';
 import Reviews from '../../Components/reviews';
 import GrowingNumbers from '../../Components/about/growing';
 import Footer from '../../Components/footer';
+import AppLayout from '../../layout/appLayout';
 
 const AboutPage = () => {
   return (
-    <div>
-        <Header/>
+    <AppLayout>
         <ImageSlider Images={CAROUSEL_SLIDERS}/>
         <About/>
         <Reviews/>
         <GrowingNumbers/>
-        <Footer/>
-    </div>
+    </AppLayout>
   )
 }
 

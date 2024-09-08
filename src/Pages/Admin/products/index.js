@@ -48,8 +48,8 @@ const Products = () => {
   return (
     <AdminLayout>
         <div className='header-add-button'>
-        <p className='header'>Your Products</p>
-        <button onClick={handleOpenModal} className='add-product'>Add Product</button>
+         <p className='header'>Your Products</p>
+         <button onClick={handleOpenModal} className='add-product'>Add Product</button>
         </div>
         <CustomModal isOpen={isModalOpen} onClose={handleCloseModal} title="Add Product">
             <AddProductForm onSave={handleSave} />

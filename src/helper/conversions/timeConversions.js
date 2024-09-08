@@ -8,6 +8,5 @@ export const epochToLocalDateTime = (epochTime) => {
 
 export const getCurrentTime = async () =>{
     const currentTime = Date.now();
-    console.log(currentTime/1000);
     return Math.floor(currentTime/1000);
 }
